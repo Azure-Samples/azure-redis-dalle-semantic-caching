@@ -1,0 +1,5 @@
+.azure
+.vs
+*\bin
+*\obj
+*\properties
