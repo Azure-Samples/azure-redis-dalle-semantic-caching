@@ -15,7 +15,7 @@ builder.Services.AddOutputCache(options => {
 
 var app = builder.Build();
 
-app.MapGet("/", async (HttpContext context) => { await context.Response.WriteAsync("<h1>Welcome to OpenAI Art Gallery</h1>"); });
+app.MapGet("/", async (HttpContext context) => { await context.Response.WriteAsync("<h1>Welcome to the Azure OpenAI Art Gallery</h1>"); });
 
 app.MapGet("/nocache/{prompt}", async (HttpContext context, string prompt, IConfiguration config) => 
     { 
