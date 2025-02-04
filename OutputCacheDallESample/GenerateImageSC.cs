@@ -4,6 +4,7 @@ using Redis.OM;
 using Redis.OM.Vectorizers;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using OpenAI.Images;
+using Azure.Identity;
 
 namespace OutputCacheDallESample
 {
@@ -29,7 +30,8 @@ namespace OutputCacheDallESample
             }
             else 
             {
-                AzureOpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
+                // AzureOpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
+                AzureOpenAIClient client = new(new Uri(endpoint), new DefaultAzureCredential());
 
                 ImageClient imageClient = client.GetImageClient("dall-e-3");
                 GeneratedImage generatedImage = await imageClient.GenerateImageAsync(_prompt, new ImageGenerationOptions() {

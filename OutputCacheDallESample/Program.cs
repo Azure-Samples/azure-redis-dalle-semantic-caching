@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.OutputCaching;
 using OutputCacheDallESample;
+using Azure.AI.OpenAI;
 using Redis.OM;
 using Redis.OM.Vectorizers;
 

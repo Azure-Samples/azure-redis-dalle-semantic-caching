@@ -1,4 +1,5 @@
 ﻿using Azure.AI.OpenAI;
+using Azure.Identity;
 using Azure;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using OpenAI.Images;
@@ -12,7 +13,9 @@ namespace OutputCacheDallESample
             string endpoint = _config["AZURE_OPENAI_ENDPOINT"];
             string key = _config["apiKey"];
 
-            AzureOpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
+            // AzureOpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
+
+            AzureOpenAIClient client = new(new Uri(endpoint), new DefaultAzureCredential());
 
             ImageClient imageClient = client.GetImageClient("dall-e-3");
             GeneratedImage generatedImage = await imageClient.GenerateImageAsync(_prompt, new ImageGenerationOptions()
