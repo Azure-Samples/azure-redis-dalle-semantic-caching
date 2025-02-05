@@ -1,4 +1,4 @@
-# .NET 8 Web Application with Redis Output Caching and Azure Open AI
+# .NET 9 Web Application with Redis Output Caching and Azure Open AI
 
 ## Overview
 This repository contains sample code for an AI image generation web application. It calls into Azure Open AI DallE to generate images based on user prompt. There are two features the sample highlights:
