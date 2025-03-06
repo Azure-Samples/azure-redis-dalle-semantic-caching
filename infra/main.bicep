@@ -64,16 +64,16 @@ module registry './shared/registry.bicep' = {
   scope: rg
 }
 
-module keyVault './shared/keyvault.bicep' = {
-  name: 'keyvault'
-  params: {
-    location: location
-    tags: tags
-    name: '${abbrs.keyVaultVaults}${resourceToken}'
-    principalId: principalId
-  }
-  scope: rg
-}
+// module keyVault './shared/keyvault.bicep' = {
+//   name: 'keyvault'
+//   params: {
+//     location: location
+//     tags: tags
+//     name: '${abbrs.keyVaultVaults}${resourceToken}'
+//     principalId: principalId
+//   }
+//   scope: rg
+// }
 
 module appsEnv './shared/apps-env.bicep' = {
   name: 'apps-env'
@@ -83,6 +83,7 @@ module appsEnv './shared/apps-env.bicep' = {
     tags: tags
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     logAnalyticsWorkspaceName: monitoring.outputs.logAnalyticsWorkspaceName
+    _resourceToken: resourceToken
   }
   scope: rg
 }
@@ -103,5 +104,5 @@ module outputCacheDallESample './app/OutputCacheDallESample.bicep' = {
 }
 
 output AZURE_CONTAINER_REGISTRY_ENDPOINT string = registry.outputs.loginServer
-output AZURE_KEY_VAULT_NAME string = keyVault.outputs.name
-output AZURE_KEY_VAULT_ENDPOINT string = keyVault.outputs.endpoint
+//output AZURE_KEY_VAULT_NAME string = keyVault.outputs.name
+//output AZURE_KEY_VAULT_ENDPOINT string = keyVault.outputs.endpoint
