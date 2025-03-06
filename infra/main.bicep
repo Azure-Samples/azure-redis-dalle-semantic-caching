@@ -83,7 +83,6 @@ module appsEnv './shared/apps-env.bicep' = {
     tags: tags
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     logAnalyticsWorkspaceName: monitoring.outputs.logAnalyticsWorkspaceName
-    _resourceToken: resourceToken
   }
   scope: rg
 }
