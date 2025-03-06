@@ -6,7 +6,7 @@ param containerRegistryName string
 param containerAppsEnvironmentName string
 param applicationInsightsName string
 param exists bool
-param _resourceToken
+param keyvaultname string
 param openAiSku object = {
   name:'S0'
 }
@@ -73,7 +73,7 @@ module fetchLatestImage '../modules/fetch-container-image.bicep' = {
 }
 
 resource keyVault 'Microsoft.KeyVault/vaults@2021-06-01-preview' = {
-  name: '${abbrs.keyVaultVaults}${_resourceToken}'
+  name: keyvaultname
   location: location
   properties: {
     sku: {

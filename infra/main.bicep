@@ -95,6 +95,7 @@ module outputCacheDallESample './app/OutputCacheDallESample.bicep' = {
     location: location
     tags: tags
     identityName: '${abbrs.managedIdentityUserAssignedIdentities}outputcached-${resourceToken}'
+    keyvaultname: '${abbrs.keyVaultVaults}${resourceToken}'
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     containerAppsEnvironmentName: appsEnv.outputs.name
     containerRegistryName: registry.outputs.name
