@@ -10,3 +10,4 @@ services:
         language: dotnet
         docker:
             path: Dockerfile
+            remoteBuild: true
