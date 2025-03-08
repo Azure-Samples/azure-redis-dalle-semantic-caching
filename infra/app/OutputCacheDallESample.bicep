@@ -28,7 +28,7 @@ var openai_deployments = [
   {
     name: 'dall-e-3'
 	  model_name: 'dall-e-3'
-    // version: '3.0'
+    version: '3.0'
     raiPolicyName: 'Microsoft.Default'
     sku_capacity: 1
     sku_name: 'Standard'
