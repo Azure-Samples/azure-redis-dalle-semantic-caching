@@ -2,7 +2,7 @@
 
 name: OutputCacheDallESample
 metadata:
-    template: azd-init@1.4.2
+    template: azure-redis-dalle-semantic-caching
 services:
     OutputCacheDallESample:
         project: OutputCacheDallESample
